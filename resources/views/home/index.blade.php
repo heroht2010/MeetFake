@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/font.css">
     <link rel="stylesheet" href="/css/fontani.css">
-    <body class="tQj5Y ghyPEc IqBfM ecJEib EWZcud EIlDfe cjGgHb d8Etdd LcUz9d uOat3d" style="bottom: auto; right: auto; width: auto; height: 100%; min-height: 625px;background: white">
+    <body style="bottom: auto; right: auto; width: auto; height: 100%; min-height: 625px;background: white">
         <div class="pGxpHc">
             <header class="gb_ta gb_1a gb_4e gb_3d" ng-non-bindable="" id="gb" role="banner" style="background-color:rgba(255,255,255,1)">
                 <div class="gb_Vd gb_fe gb_5d gb_4d">

@@ -1,6 +1,4 @@
 
-        var connection=new RTCMultiConnection();
-
         connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
         connection.session={
             audio:true,
@@ -9,12 +7,6 @@
         connection.sdpConstraints.mandatory={
             OfferToReceiveAudio: true,
             OfferToReceiveVideo: true
-        };
-
-        connection.extra = {
-        name: "<?php echo session('name');?>",
-        email: "<?php echo session('email');?>",
-        avartar: "<?php echo session('avartar');?>"
         };
 
         connection.onstream = function(event) {

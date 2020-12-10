@@ -123,6 +123,15 @@
         <p id="userStatus">fasfaf</p>
     </div>
 
+    <script>
+        var connection=new RTCMultiConnection();
+
+        connection.extra = {
+        name: "<?php echo session('name');?>",
+        email: "<?php echo session('email');?>",
+        avartar: "<?php echo session('avartar');?>"
+        };
+    </script>
     <script src="/js/getFuncRTCMultiConnection.js"></script>
     <script src="/js/offRoom.js"></script>
 
