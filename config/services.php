@@ -32,6 +32,6 @@ return [
     'google' => [
         'client_id'     => '764814480106-801jikhiq5nbs011l8v624dq412ea32a.apps.googleusercontent.com',
         'client_secret' => 'IP7IqiUDNupRdJ_MOw4U8k_K',
-        'redirect'      => 'http://127.0.0.1:8000/login/google/callback'
+        'redirect'      => 'http://127.0.0.1:8000/login/google/callback/'
     ],
 ];
