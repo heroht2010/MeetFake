@@ -53,9 +53,14 @@
                                 <div class="gb_Vf gb_Wa gb_Ig gb_i">
 
                                     @if(session('name') && session('avartar'))
-                                    <a class="gb_D gb_Ra gb_i" aria-label="Tài khoản Google: {{session('name')}} ({{session('email')}})" role="button" tabindex="0" aria-expanded="false">
-                                        <img class="gb_Ia gbii" src="{{session('avartar')}}" alt="" aria-hidden="true" data-noaft="">
-                                    </a>
+                                    <div class="dropdown">
+                                        <a class="gb_D gb_Ra gb_i" data-toggle="dropdown" aria-label="Tài khoản Google: {{session('name')}} ({{session('email')}})" role="button" tabindex="0" aria-expanded="false">
+                                            <img class="gb_Ia gbii" src="{{session('avartar')}}" alt="" aria-hidden="true"  data-noaft="">
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Link 1</a>
+                                        </div>
+                                    </div>
                                     @else
                                     <a href="{{route('login')}}">
                                         <button class="glue-button">
@@ -93,6 +98,28 @@
                                                     <div class="VfPpkd-Jh9lGc"></div>
                                                     <i class="google-material-icons VfPpkd-kBDsod" aria-hidden="true">video_call</i>
                                                     <span jsname="V67aGc" class="VfPpkd-vQzf8d">Cuộc họp mới</span>
+                                                    <div class="VfPpkd-RLmnJb"></div>
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="VfPpkd-xl07Ob-XxIAqe-OWXEXe-oYxtQd" jscontroller="wg1P6b" jsaction="JIbuQc:JIbuQc(WjL7X); keydown:I481le(WjL7X);iFFCZc:Y0y4c;Rld2oe:gDkf4c" jsname="JXzze">
+                                    <div jsname="WjL7X">
+                                        <div class="VfPpkd-dgl2Hf-ppHlrf-sM5MNb" data-is-touch-wrapper="true">
+
+                                            @if(session('avartar') && session('name') && session('provider_id'))
+                                                @php
+                                                    $provider_id = session()->get('provider_id');
+                                                @endphp
+                                            <a href="{{url('indexCalendar',$provider_id)}}">
+                                            @else
+                                            <a href="{{route('login')}}">
+                                            @endif
+                                                <button class="VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe cjtUbb Dg7t5c" style="background: #3C1A5B" jscontroller="soHxf"  autofocus="autofocus">
+                                                    <div class="VfPpkd-Jh9lGc"></div>
+                                                    <span class="material-icons"></span>
+                                                    <span jsname="V67aGc" class="VfPpkd-vQzf8d">Đặt lịch</span>
                                                     <div class="VfPpkd-RLmnJb"></div>
                                                 </button>
                                             </a>

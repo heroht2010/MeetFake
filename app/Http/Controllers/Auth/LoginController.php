@@ -59,8 +59,13 @@ class LoginController extends Controller
         $user = Socialite::driver('google')->user();
         session()->put('iduser',$user->getId());
         session()->put('avartar',$user->getAvatar());
+        session()->put('iduser',$user->getId()); 
         session()->put('name',$user->getName());
         session()->put('email',$user->getEmail());
+        session()->put('avatar',$user->getAvatar());
+        session()->put('provider_id',$user->getId());     
+
+        
         return redirect('');
     }
 }

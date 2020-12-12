@@ -9,6 +9,19 @@
 
 'use strict';
 
+function chatForm() {
+    var x = document.getElementById('sms-send').value;
+    var p = document.createElement("p");
+    var b = document.createElement("b");  
+    var textP = document.createTextNode(x);
+    var textB = document.createTextNode("Bạn: ");
+    p.appendChild(textP); 
+    b.appendChild(textB); 
+    var text = b+p;
+    document.getElementById('chat-box').appendChild(p)
+   document.getElementById('sms-send').value ="";
+  }
+
 (function ($) {
 
     /*------------------

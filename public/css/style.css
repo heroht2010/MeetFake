@@ -607,14 +607,40 @@ ol {
   /* Style the tab content (and add height:100% for full page content) */
   .tabcontent {
     color: white;
-    display: none;
-    padding: 80px 20px;
+   
     height: 100%;
     text-align: left;
   }
-
-  #Home {background-color: white;}
-  #News {background-color: white;}
+  .chat-box{
+	  height: 75%;
+	  width: 100%;
+	  overflow: auto;
+	  color: black;
+  }
+  .tabcontent>.chat-box>p{
+	color: black;
+  }
+  .tabcontent>.chat-box>b{
+	position: static;
+}
+  .message{
+	height: 15%;
+	background-color: white;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  .input-message{
+	width: 16em;
+	border: none;
+	margin: 2em 0 2em 1em;
+	height: 2em;
+	border-bottom: 1px solid #7f8c8d;
+	  
+  }
+  .input-message:focus{
+	border-bottom: solid orange 2px;
+  }
+  #Home {background-color:  #ecf0f1;}
+  #News {background-color:  #ecf0f1;}
   .listUser{
       width: 100%;
       height: auto;
