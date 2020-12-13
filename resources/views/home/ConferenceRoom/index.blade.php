@@ -128,7 +128,22 @@
     <div class="modalStatusUser w3-animate-bottom" id="userStatusContainer" >
         <p id="userStatus">fasfaf</p>
     </div>
-
+<script>
+function copyToClipboard(text) {
+            alert("Already");
+          var input = document.body.appendChild(document.createElement("input"));
+              input.value = text;
+              input.focus();
+              input.select();
+              document.execCommand('copy');
+              input.parentNode.removeChild(input);
+              $("#userStatus").text("Đã sao chép đường liên kết của cuộc họp");
+      document.getElementById("userStatusContainer").style.visibility = "visible";
+      setTimeout(function(){
+          document.getElementById("userStatusContainer").style.visibility = "hidden";
+       },3000);
+}
+    </script>
 {{-- RTC Multiconnection --}}
 <script src="{{asset('/js/RTCMultiConnection.min.js')}}"></script>
 <script src="https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js"></script>
