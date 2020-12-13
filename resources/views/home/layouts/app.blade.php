@@ -38,7 +38,6 @@
     <script src="{{asset('/js/jquery.barfiller.js')}}"></script>
     <script src="{{asset('/js/jquery.slicknav.js')}}"></script>
     <script src="{{asset('/js/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('/js/copyToClipBoard.js')}}"></script>
     <script src="{{asset('/js/main.js')}}"></script>
 
     <style>
