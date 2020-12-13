@@ -134,7 +134,21 @@
 <script src="https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js"></script>
     <script>
 var connection=new RTCMultiConnection();
-
+navigator.getWebcam = (navigator.getUserMedia || navigator.webKitGetUserMedia || navigator.moxGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
+if (navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices.getUserMedia({  audio: true, video: true })
+    .then(function (stream) {
+                  //Display the video stream in the video object
+     })
+     .catch(function (e) { logError(e.name + ": " + e.message); });
+}
+else {
+navigator.getWebcam({ audio: true, video: true },
+     function (stream) {
+             //Display the video stream in the video object
+     },
+     function () { logError("Web cam is not accessible."); });
+}
 connection.extra = {
 name: "<?php echo session('name');?>",
 email: "<?php echo session('email');?>",

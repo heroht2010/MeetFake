@@ -1,13 +1,6 @@
 
         connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
-        connection.session={
-            audio:true,
-            video:true
-        };
-        connection.sdpConstraints.mandatory={
-            OfferToReceiveAudio: true,
-            OfferToReceiveVideo: true
-        };
+
 
         connection.onstream = function(event) {
 
