@@ -1,5 +1,6 @@
 
         function copyToClipboard(text) {
+            alert("Already");
           var input = document.body.appendChild(document.createElement("input"));
               input.value = text;
               input.focus();

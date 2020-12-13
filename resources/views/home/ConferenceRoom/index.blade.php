@@ -144,6 +144,5 @@ avartar: "<?php echo session('avartar');?>"
     </script>
     <script src="{{asset('/js/getFuncRTCMulticonnection.js')}}"></script>
     <script src="{{asset('/js/offRoom.js')}}"></script>
-    <script src="{{asset('/js/copyToClipBoard.js')}}"></script>
 
 @endsection
