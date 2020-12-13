@@ -1,17 +1,5 @@
 
-        function copyToClipboard(text) {
-          var input = document.body.appendChild(document.createElement("input"));
-              input.value = text;
-              input.focus();
-              input.select();
-              document.execCommand('copy');
-              input.parentNode.removeChild(input);
-              $("#userStatus").text("Đã sao chép đường liên kết của cuộc họp");
-      document.getElementById("userStatusContainer").style.visibility = "visible";
-      setTimeout(function(){
-          document.getElementById("userStatusContainer").style.visibility = "hidden";
-       },3000);
-}
+
     function dropUp() {
       document.getElementById("myDropup").classList.toggle("show");
     }
