@@ -51,7 +51,7 @@
                                     <input type="button"  value="Gửi" onclick="chatForm()">
                             </div>
                         </div>
-                        <script src="/js/getTimeCurrent.js"></script>
+                        <script src="{{asset('/js/getTimeCurrent.js')}}"></script>
                     </div>
                 </div>
             </div>
@@ -140,7 +140,7 @@ avartar: "<?php echo session('avartar');?>"
 };
 
     </script>
-    <script src="/js/getFuncRTCMulticonnection.js"></script>
-    <script src="/js/offRoom.js"></script>
+    <script src="{{asset('/js/getFuncRTCMulticonnection.js')}}"></script>
+    <script src="{{asset('/js/offRoom.js')}}"></script>
 
 @endsection
