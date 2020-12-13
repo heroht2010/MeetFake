@@ -129,9 +129,7 @@
         <p id="userStatus">fasfaf</p>
     </div>
 
-    {{-- RTC Multiconnection --}}
-    <script src="/js/RTCMultiConnection.min.js"></script>
-    <script src="https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js"></script>
+
     <script>
 var connection=new RTCMultiConnection();
 
