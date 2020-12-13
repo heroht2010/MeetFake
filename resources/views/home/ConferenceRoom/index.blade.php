@@ -43,10 +43,10 @@
 
                         <div id="News" class="tabcontent" style="display:none">
                             <div class="chat-box" id="chat-box">
-                                
+
                             </div>
                             <div class="message">
-                                    
+
                                     <input type="text" id="sms-send" class="input-message" placeholder="Gửi tin nhắn cho mọi người">
                                     <input type="button"  value="Gửi" onclick="chatForm()">
                             </div>
@@ -138,7 +138,7 @@
         avartar: "<?php echo session('avartar');?>"
         };
     </script>
-    <script src="/js/getFuncRTCMultiConnection.js"></script>
+    <script src="/js/getFuncRTCMulticonnection.js"></script>
     <script src="/js/offRoom.js"></script>
 
 @endsection
