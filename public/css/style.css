@@ -742,6 +742,7 @@ ol {
     color: white;
     border: 1px solid  #212529;
     border-radius: 5%;
+    visibility:hidden;
 
 }
 

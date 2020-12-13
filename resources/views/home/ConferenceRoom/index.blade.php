@@ -1,9 +1,60 @@
-@extends('home.layouts.app')
+<!DOCTYPE html>
+<html lang="zxx">
 
-@section('title','VKU-meet Phòng họp')
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Gym Template">
+    <meta name="keywords" content="Gym, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@yield('title')</title>
 
-@section('content')
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One&display=swap" rel="stylesheet">
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('/css/flaticon.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('/css/owl.carousel.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('/css/barfiller.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('/css/magnific-popup.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('/css/slicknav.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('/css/style.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('/css/main.css')}}" type="text/css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+
+    {{-- JS FILE --}}
+    <script src="{{asset('/js/tablink.js')}}"></script>
+    <script src="{{asset('/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('/js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{asset('/js/masonry.pkgd.min.js')}}"></script>
+    <script src="{{asset('/js/jquery.barfiller.js')}}"></script>
+    <script src="{{asset('/js/jquery.slicknav.js')}}"></script>
+    <script src="{{asset('/js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('/js/copyToClipBoard.js')}}"></script>
+    <script src="{{asset('/js/main.js')}}"></script>
+
+    <style>
+        body{
+            background-color: #19191a;
+        }
+        video{
+            -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+        }
+        </style>
+</head>
+<body>
     {{-- Header --}}
     <header class="header-section">
         <div class="container-fluid">
@@ -128,22 +179,7 @@
     <div class="modalStatusUser w3-animate-bottom" id="userStatusContainer" >
         <p id="userStatus">fasfaf</p>
     </div>
-<script>
-function copyToClipboard(text) {
-            alert("Already");
-          var input = document.body.appendChild(document.createElement("input"));
-              input.value = text;
-              input.focus();
-              input.select();
-              document.execCommand('copy');
-              input.parentNode.removeChild(input);
-              $("#userStatus").text("Đã sao chép đường liên kết của cuộc họp");
-      document.getElementById("userStatusContainer").style.visibility = "visible";
-      setTimeout(function(){
-          document.getElementById("userStatusContainer").style.visibility = "hidden";
-       },3000);
-}
-    </script>
+
 {{-- RTC Multiconnection --}}
 <script src="{{asset('/js/RTCMultiConnection.min.js')}}"></script>
 <script src="https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js"></script>
@@ -160,4 +196,5 @@ avartar: "<?php echo session('avartar');?>"
     <script src="{{asset('/js/getFuncRTCMulticonnection.js')}}"></script>
     <script src="{{asset('/js/offRoom.js')}}"></script>
 
-@endsection
+</body>
+</html>
