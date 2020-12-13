@@ -132,7 +132,7 @@
     {{-- RTC Multiconnection --}}
     <script src="/js/RTCMultiConnection.min.js"></script>
     <script src="https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js"></script>
-    <script src="/js/getFuncRTCMultiConnection.js"></script>
+    <script src="/js/getFuncRTCMulticonnection.js"></script>
     <script src="/js/offRoom.js"></script>
 
 @endsection
