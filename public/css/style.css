@@ -607,7 +607,7 @@ ol {
   /* Style the tab content (and add height:100% for full page content) */
   .tabcontent {
     color: white;
-   
+
     height: 100%;
     text-align: left;
   }
@@ -634,7 +634,7 @@ ol {
 	margin: 2em 0 2em 1em;
 	height: 2em;
 	border-bottom: 1px solid #7f8c8d;
-	  
+
   }
   .input-message:focus{
 	border-bottom: solid orange 2px;
@@ -742,7 +742,6 @@ ol {
     color: white;
     border: 1px solid  #212529;
     border-radius: 5%;
-    visibility:hidden;
 
 }
 
