@@ -1,5 +1,5 @@
 
-        connection.socketURL = 'https://vkumeet.herokuapp.com/';
+        connection.socketURL = 'https://vkumeet.herokuapp.com:443/';
         connection.session={
             audio:true,
             video:true
