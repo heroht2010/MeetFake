@@ -1,10 +1,4 @@
-var connection=new RTCMultiConnection();
 
-        connection.extra = {
-        name: "<?php echo session('name');?>",
-        email: "<?php echo session('email');?>",
-        avartar: "<?php echo session('avartar');?>"
-        };
         connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
         connection.session={
             audio:true,
