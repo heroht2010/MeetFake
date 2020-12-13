@@ -26,3 +26,14 @@ Route::get('/offRoom', function () {
 Route::get('/login/google', 'Auth\LoginController@redirectToProvider')->name('login');
 Route::get('/login/google/callback', 'Auth\LoginController@handleProviderCallback');
 
+//calendar
+Route::get('indexCalendar/{provider_id}','CalendarController@index');
+Route::get('listEvent/{provider_id}','CalendarController@listEvent');
+Route::post('eventStore','CalendarController@store');
+Route::post('eventUpdate','CalendarController@update');
+Route::post('eventDelete','CalendarController@delete');
+Route::get('/logout', 'CalendarController@logout');
+Route::get('/calendar',function(){
+	
+	return view('welcome');
+});
