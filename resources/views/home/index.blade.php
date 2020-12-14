@@ -52,14 +52,24 @@
                                 <div class="gb_Vf gb_Wa gb_Ig gb_i">
 
                                     @if(session('name') && session('avartar'))
-                                    <div class="dropdown">
-                                        <a class="gb_D gb_Ra gb_i" data-toggle="dropdown" aria-label="Tài khoản Google: {{session('name')}} ({{session('email')}})" role="button" tabindex="0" aria-expanded="false">
+                                    <div class="w3-dropdown-click">
+                                        <a class="gb_D gb_Ra gb_i" data-toggle="dropdown" aria-label="Tài khoản Google: {{session('name')}} ({{session('email')}})" role="button" onclick="myFunction()" tabindex="0" aria-expanded="false">
                                             <img class="gb_Ia gbii" src="{{session('avartar')}}" alt="" aria-hidden="true"  data-noaft="">
                                         </a>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Link 1</a>
+                                        <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
+                                            <a class="w3-bar-item" href="#">Link 1</a>
                                         </div>
                                     </div>
+                                    <script>
+                                        function myFunction() {
+                                          var x = document.getElementById("Demo");
+                                          if (x.className.indexOf("w3-show") == -1) {
+                                            x.className += " w3-show";
+                                          } else {
+                                            x.className = x.className.replace(" w3-show", "");
+                                          }
+                                        }
+                                        </script>
                                     @else
                                     <a href="{{route('login')}}">
                                         <button class="glue-button">
