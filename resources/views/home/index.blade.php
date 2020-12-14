@@ -15,8 +15,7 @@
                         <div class="gb_sc">
                             <div class="gb_tc">
                                 <a class="gb_we gb_uc gb_ue" aria-label="Meet" href="?authuser=0" title="Google Meet" id="sdgBod">
-                                    <img class="gb_va" src="https://www.gstatic.com/meet/google_meet_horizontal_wordmark_2020q4_1x_icon_124_40_2373e79660dabbf194273d27aa7ee1f5.png" srcset="https://www.gstatic.com/meet/google_meet_horizontal_wordmark_2020q4_1x_icon_124_40_2373e79660dabbf194273d27aa7ee1f5.png 1x, https://www.gstatic.com/meet/google_meet_horizontal_wordmark_2020q4_2x_icon_124_40_292e71bcb52a56e2a9005164118f183b.png 2x " alt="" aria-hidden="true" style="width:124px;height:40px" data-iml="482.4899999948684" data-atf="true">
-                                    <span class="gb_he gb_1c">Meet</span>
+                                    <img class="gb_va" src="../image/LOGO.png" style="width: 180px;height: 120px;" alt="" aria-hidden="true" data-iml="482.4899999948684" data-atf="true">
                                 </a>
                             </div>
                         </div>
@@ -83,7 +82,7 @@
                     <div class="ggt41e">
                         <div class="Qcuypc">
                             <div class="YpQfNc">Cuộc họp video chất lượng. Giờ đây miễn phí cho tất cả mọi người.</div>
-                            <div class="rH9mRb">Chúng tôi đã thiết kế lại Google&nbsp;Meet — dịch vụ tổ chức cuộc họp kinh doanh với độ bảo mật cao — để cung cấp miễn phí cho mọi người.</div>
+                            <div class="rH9mRb">Chúng tôi đã thiết kế lại VKU&nbsp;Meet — dịch vụ tổ chức cuộc họp học tập trực tuyến với độ bảo mật cao — để cung cấp miễn phí cho mọi người.</div>
                             <div class="Ez8Iud" jsname="FWIhdb" jscontroller="cleqRb" jsaction="JIbuQc:oRCNsf(r9ERUc); input:Bd1UWd(JaBLbe);AHmuwe:Bd1UWd(JaBLbe);O22p3e:U01RBb(JaBLbe);FzgWvd:eUYW1b; focusin:iR7IDc(JXzze); focusout:U01RBb(JaBLbe); keyup:peVwdb(JaBLbe);" data-is-dasher="false">
                                 <div class="VfPpkd-xl07Ob-XxIAqe-OWXEXe-oYxtQd" jscontroller="wg1P6b" jsaction="JIbuQc:JIbuQc(WjL7X); keydown:I481le(WjL7X);iFFCZc:Y0y4c;Rld2oe:gDkf4c" jsname="JXzze">
                                     <div jsname="WjL7X">
@@ -145,7 +144,7 @@
                             <div class="Vctqkd"></div>
                             <div class="bpZLge">
                                 <span class="GNpa5c" jscontroller="flbTs" jsaction="click:ndJ4N" data-url="https://meet.google.com/about/redirect/landing-learn-more/?hl=vi" data-impression="6565">
-                                    <a href="https://meet.google.com/about/redirect/landing-learn-more/?hl=vi" target="_blank" rel="noopener" class="IClWHc" style="color: #3C1A5B">Tìm hiểu thêm</a> về Google Meet</span>
+                                    <a href="https://meet.google.com/about/redirect/landing-learn-more/?hl=vi" target="_blank" rel="noopener" class="IClWHc" style="color: #3C1A5B">Tìm hiểu thêm</a> về VKU Meet</span>
                             </div>
                         </div>
                         <div class="C9bDzc">
@@ -156,7 +155,7 @@
                                             <div class=" FIvd3e">
                                                 <div jsname="HKq5re" class="XdaCre">
                                                     <div class="LSNDte">
-                                                        <img class="se63he" src="https://cnet1.cbsistatic.com/img/PtuqepXx_bJxG3bcJTpVsK1zXm8=/940x0/2020/04/22/a87b0552-7215-4e0e-9370-8a3b7273519d/tiled-view-4x4.png" alt="Hình ảnh mọi người tham gia cuộc họp trên Google&nbsp;Meet" >
+                                                        <img class="se63he" src="https://cnet1.cbsistatic.com/img/PtuqepXx_bJxG3bcJTpVsK1zXm8=/940x0/2020/04/22/a87b0552-7215-4e0e-9370-8a3b7273519d/tiled-view-4x4.png" alt="Hình ảnh mọi người tham gia cuộc họp trên VKU&nbsp;Meet" >
                                                     </div>
                                                 </div>
                                             </div>
