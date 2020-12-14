@@ -113,7 +113,6 @@ var btnCountVideo=0;
           userinRoom+="<p id='nameuserInRoom'>"+user.extra.name+"</p>";
           userinRoom+="</div>";
            $("#listUser").append(userinRoom);
-           user.peer.close();
 
 });
         };
