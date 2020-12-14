@@ -734,7 +734,7 @@ ol {
     background-color: tomato;
 }
 .modalStatusUser{
-    background-color: forestgreen;float: left;width: auto;height: 50px;position: fixed;bottom: 15%;
+    background-color: forestgreen;float: left;width: auto;height: 50px;position: fixed;top: -15%;;
     text-align: center;
     padding: 1%;
     margin-left: 1%;
