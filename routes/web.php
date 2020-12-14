@@ -34,6 +34,6 @@ Route::post('eventUpdate','CalendarController@update');
 Route::post('eventDelete','CalendarController@delete');
 Route::get('/logout', 'CalendarController@logout');
 Route::get('/calendar',function(){
-	
+
 	return view('welcome');
 });
