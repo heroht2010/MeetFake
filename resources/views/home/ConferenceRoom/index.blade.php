@@ -136,7 +136,7 @@ name: "<?php echo session('name');?>",
 email: "<?php echo session('email');?>",
 avartar: "<?php echo session('avartar');?>"
 };
-        
+
 </script>
 <script src="{{asset('/js/getFuncRTCMulticonnection.js')}}"></script>
     <script src="{{asset('/js/offRoom.js')}}"></script>
