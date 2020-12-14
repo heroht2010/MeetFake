@@ -56,7 +56,7 @@
                                         <a class="gb_D gb_Ra gb_i" data-toggle="dropdown" aria-label="Tài khoản Google: {{session('name')}} ({{session('email')}})" role="button" onclick="myFunction()" tabindex="0" aria-expanded="false">
                                             <img class="gb_Ia gbii" src="{{session('avartar')}}" alt="" aria-hidden="true"  data-noaft="">
                                         </a>
-                                        <div id="Demo" class="w3-dropdown-content w3-bar-block w3-card-4 w3-animate-zoom">
+                                        <div id="Demo" class="w3-dropdown-content w3-bar-block w3-card-4 w3-animate-zoom" style="right:0">
                                             <a class="w3-bar-item" href="#">Link 1</a>
                                         </div>
                                     </div>
