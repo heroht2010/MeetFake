@@ -29,9 +29,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
 
-{{-- RTC Multiconnection --}}
-<script src="{{asset('/js/RTCMultiConnection.min.js')}}"></script>
-<script src="https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js"></script>
+    {{-- RTC Multiconnection --}}
+    <script src="{{asset('/js/RTCMultiConnection.min.js')}}"></script>
+    <script src="https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js"></script>
     {{-- JS FILE --}}
     <script src="{{asset('/js/tablink.js')}}"></script>
     <script src="{{asset('/js/jquery-3.3.1.min.js')}}"></script>
