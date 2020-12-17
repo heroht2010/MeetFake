@@ -6,7 +6,9 @@ $(document).ready(function(){
     // Khởi tạo một đối tượng Pusher với app_key
     var pusher = new Pusher('a13d7356c1869bcbce6a', {
         cluster: 'ap1',
-        encrypted: true
+        encrypted: true,
+        useTLS:true,
+        scheme: 'http'
     });
     //Đăng ký với kênh chanel-demo-real-time mà ta đã tạo trong file DemoPusherEvent.php
     var channel = pusher.subscribe('VKUMeet-chat');
