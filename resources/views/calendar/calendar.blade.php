@@ -7,7 +7,7 @@
    
     <script src="{{ asset('JS/calendar.js')}}"></script>
     <link rel="stylesheet" type="text/css" href="{{asset('calendar/main.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('CSS/index.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/index.css')}}">
     <script src="{{ asset('calendar/main.js')}}"></script>
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
