@@ -15,7 +15,7 @@ class ChatController extends Controller
         if($session_idRoom==$idRoom){
           // Truyền message lên server Pusher
           event(new ChatEvent($mess,$idRoom));
-             echo $session_idRoom.": ".$idRoom;
+          
         }
     }
 }

@@ -4,11 +4,9 @@ $(document).ready(function(){
   
   
     // Khởi tạo một đối tượng Pusher với app_key
-    var pusher = new Pusher('a13d7356c1869bcbce6a', {
+    var pusher = new Pusher('db044889be99b3a4edca', {
         cluster: 'ap1',
         encrypted: true,
-        useTLS:true,
-        
     });
     //Đăng ký với kênh chanel-demo-real-time mà ta đã tạo trong file DemoPusherEvent.php
     var channel = pusher.subscribe('VKUMeet-chat');
@@ -17,6 +15,7 @@ $(document).ready(function(){
   });
   //function add message
   function addMessageDemo(data) {
+    
     var idRoom_chat = document.getElementById("idRoom-chat").value;
     
     if(idRoom_chat==data.idRoom){
@@ -40,7 +39,9 @@ $(document).ready(function(){
                   idRoom:idRoom,
                   Username:Username
                 },
-            
+            success: function(data){
+              console.log(data);
+            }
             });
             
         }

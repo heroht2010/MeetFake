@@ -29,8 +29,8 @@ class ChatEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        
+       
         return new Channel('VKUMeet-chat');
-        echo "no bug";
+        
     }
 }
