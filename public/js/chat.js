@@ -23,6 +23,7 @@ $(document).ready(function(){
       var liTag = $("<div class='chat-content'></div>");
       liTag.html(data.message);
       $('#chat-box').append(liTag);
+        alert("ok");
     }
   }
   function formChat()
