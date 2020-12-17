@@ -230,7 +230,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
-        
+        'Pusher' => Pusher\Pusher::class,
     ],
 
 ];

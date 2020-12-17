@@ -279,7 +279,9 @@ ol {
 	background: #000;
 	z-index: 99999;
 }
-
+.chat-content{
+	padding: 5px 15px 5px 15px;
+}
 .search-model-form {
 	padding: 0 15px;
 }
@@ -629,7 +631,7 @@ ol {
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
   .input-message{
-	width: 16em;
+	width: 17em;
 	border: none;
 	margin: 2em 0 2em 1em;
 	height: 2em;

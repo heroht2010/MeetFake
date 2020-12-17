@@ -37,3 +37,7 @@ Route::get('/calendar',function(){
 
 	return view('welcome');
 });
+
+//Chat
+// Truyển message lên server Pusher
+ Route::get('fire-event','ChatController@fireEvent');

@@ -22,6 +22,16 @@
     <link rel="stylesheet" href="{{asset('/css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('/css/style.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('/css/main.css')}}" type="text/css">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="/css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/barfiller.css" type="text/css">
+    <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 
@@ -42,17 +52,32 @@
     <script src="{{asset('/js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('/js/copyToClipBoard.js')}}"></script>
     <script src="{{asset('/js/main.js')}}"></script>
+    <script src="{{asset('/js/chat.js')}}"></script>
 
+    <script src="/js/tablink.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/masonry.pkgd.min.js"></script>
+    <script src="/js/jquery.barfiller.js"></script>
+    <script src="/js/jquery.slicknav.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/copyToClipBoard.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/chat.js"></script>
+
+    <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body{
             background-color: #19191a;
         }
         video{
             -moz-transform: scale(-1, 1);
-    -webkit-transform: scale(-1, 1);
-    -o-transform: scale(-1, 1);
-    -ms-transform: scale(-1, 1);
-    transform: scale(-1, 1);
+            -webkit-transform: scale(-1, 1);
+            -o-transform: scale(-1, 1);
+            -ms-transform: scale(-1, 1);
+            transform: scale(-1, 1);
         }
         </style>
 </head>
