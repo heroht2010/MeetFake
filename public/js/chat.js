@@ -8,7 +8,7 @@ $(document).ready(function(){
         cluster: 'ap1',
         encrypted: true,
         useTLS:true,
-        scheme: 'http'
+        
     });
     //Đăng ký với kênh chanel-demo-real-time mà ta đã tạo trong file DemoPusherEvent.php
     var channel = pusher.subscribe('VKUMeet-chat');
