@@ -10,12 +10,7 @@ class ChatController extends Controller
         $idRoom = $request->idRoom;
         $Username = $request->Username;
         $mess = $Username.": ".$sms;
-        $session_idRoom = $request->session()->get('idRoom');
-       
-        if($session_idRoom==$idRoom){
-          // Truyền message lên server Pusher
-          event(new ChatEvent($mess,$idRoom));
-          
-        }
+        // Truyền message lên server Pusher
+        event(new ChatEvent($mess,$idRoom));
     }
 }
