@@ -68,7 +68,7 @@ class LoginController extends Controller
             session()->put('email',$getInfo->getEmail());
             session()->put('avatar',$getInfo->getAvatar());
             session()->put('provider_id',$getInfo->getId());  
-            
+            dd("ok");
         }
 
         return redirect('');
