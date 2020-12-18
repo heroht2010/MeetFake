@@ -35,7 +35,10 @@ function formChat()
           sms:sms,
           idRoom:idRoom,
           Username:Username
-        }
+        },
+    success:function(data){
+      console.log(data);
+    }
     });
   }
   document.getElementById("sms-send").value="";
