@@ -56,16 +56,50 @@ class LoginController extends Controller
      */
     public function handleProviderCallback()
     {
-        $user = Socialite::driver('google')->user();
-        session()->put('iduser',$user->getId());
-        session()->put('avartar',$user->getAvatar());
-        session()->put('iduser',$user->getId()); 
-        session()->put('name',$user->getName());
-        session()->put('email',$user->getEmail());
-        session()->put('avatar',$user->getAvatar());
-        session()->put('provider_id',$user->getId());     
+
+        $getInfo = Socialite::driver($provider)->user();
+
+        $user = $this->createUser($getInfo,'google');
+       
+           
+
+        $arr =[
+            'provider_id'=>$user->getId(),
+        ];
+        if(Auth::attempt($arr)){
+            session()->put('iduser',$user->getId());
+            session()->put('avartar',$user->getAvatar());
+            session()->put('name',$user->getName());
+            session()->put('email',$user->getEmail());
+            session()->put('avatar',$user->getAvatar());
+            session()->put('provider_id',$user->getId());  
+        }
 
         
         return redirect('');
+    }
+    function createUser($getInfo){
+ 
+        $user = User::where('provider_id', $getInfo->id)->first();
+        
+        if (!$user) {
+            $user = User::create([
+                'name'     => $getInfo->name,
+                'email'    => $getInfo->email,
+                'avatar'    => $getInfo->avatar,
+                'provider' => 'google',
+                'provider_id' => $getInfo->id
+            ]);
+        }
+        if ($user) {
+            $user = User::update([
+                'name'     => $getInfo->name,
+                'email'    => $getInfo->email,
+                'avatar'    => $getInfo->avatar,
+                'provider' => 'google',
+                'provider_id' => $getInfo->id
+            ]);
+        }
+        return $user;
     }
 }

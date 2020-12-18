@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="{{asset('/css/style.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('/css/main.css')}}" type="text/css">
 
-    
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -45,7 +44,6 @@
     <script src="{{asset('/js/main.js')}}"></script>
     <script src="{{asset('/js/chat.js')}}"></script>
 
-   
 
     <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
