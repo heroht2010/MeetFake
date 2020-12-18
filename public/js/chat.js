@@ -23,6 +23,7 @@ $(document).ready(function(){
       var liTag = $("<div class='chat-content'></div>");
       liTag.html(data.message);
       $('#chat-box').append(liTag);
+      console.log("ok");
     }
   }
   function formChat()
@@ -43,4 +44,11 @@ $(document).ready(function(){
             
         }
         document.getElementById("sms-send").value="";
+<<<<<<< HEAD
       }
+=======
+            
+        
+              
+        }
+>>>>>>> cd86236004320a4e99b6f89c2a1f5b2a2207db30
