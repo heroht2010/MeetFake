@@ -9,6 +9,7 @@ $(document).ready(function(){
   var channel = pusher.subscribe('VKUMeet-chat');
   //Bind một function addMesagePusher với sự kiện DemoPusherEvent
   channel.bind('App\\Events\\ChatEvent', addMessageDemo);
+  console.log("test");
 });
   //function add message
 function addMessageDemo(data) {
@@ -19,7 +20,6 @@ function addMessageDemo(data) {
     var liTag = $("<div class='chat-content'></div>");
     liTag.html(data.message);
     $('#chat-box').append(liTag);
-    console.log("ok");
   }
 }
 function formChat()
