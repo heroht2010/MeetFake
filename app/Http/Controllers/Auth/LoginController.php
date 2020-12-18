@@ -57,7 +57,7 @@ class LoginController extends Controller
     public function handleProviderCallback()
     {
 
-        $getInfo = Socialite::driver($provider)->user();
+        $getInfo = Socialite::driver('google')->user();
 
         $user = $this->createUser($getInfo,'google');
        
