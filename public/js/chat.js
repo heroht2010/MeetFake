@@ -44,9 +44,7 @@ $(document).ready(function(){
             
         }
         document.getElementById("sms-send").value="";
-      }
-
-            
+      }       
         
   
 
