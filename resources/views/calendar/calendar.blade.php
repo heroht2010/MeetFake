@@ -22,7 +22,8 @@
 
 
 <body>  
-@include('sweetalert::alert')
+@include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
+
   @if (Session::has('email'))
     @php
       $name= session()->get('name');
@@ -101,26 +102,7 @@
         </div>
     </dialog>
     <div class="wrapper">
-      <main>
-      @if ( Session::has('success') )
-                <div class="alert alert-success alert-dismissible"  role="alert">
-                    <strong>{{ Session::get('success') }}</strong>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
-                    </button>
-                </div>
-        @endif
-        @if ( Session::has('faild') )
-            <div class="alert alert-danger alert-dismissible"role="alert">
-                <strong>{{ Session::get('faild') }}</strong>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                </button>
-            </div>
-        @endif 
-        
+      <main>        
       <div id='calendar'></div> 
       </main>
       <sidebar >
