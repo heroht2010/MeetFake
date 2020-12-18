@@ -61,21 +61,21 @@ class LoginController extends Controller
         $user = $this->createUser($getInfo,'google');
        
         
-        if(Auth::attempt($user)){
+        //if(Auth::attempt($user)){
             session()->put('iduser',$getInfo->getId());
             session()->put('avartar',$getInfo->getAvatar());
             session()->put('name',$getInfo->getName());
             session()->put('email',$getInfo->getEmail());
             session()->put('avatar',$getInfo->getAvatar());
             session()->put('provider_id',$getInfo->getId());
-        }
+        //}
 
         return redirect('');
         
     }
     function createUser($getInfo){
  
-        $user = User::where('provider_id', $getInfo->id)->first()->get();
+        $user = User::where('provider_id', $getInfo->id)->first();
         
         if (!$user) {
             $create = User::create([
