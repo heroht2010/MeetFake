@@ -1,4 +1,5 @@
 
+var pageInitialized = false;
 $(document).ready(function(){
   // Khởi tạo một đối tượng Pusher với app_key
   var pusher = new Pusher('db044889be99b3a4edca', {
@@ -10,6 +11,8 @@ $(document).ready(function(){
   //Bind một function addMesagePusher với sự kiện DemoPusherEvent
   channel.bind('App\\Events\\ChatEvent', addMessageDemo);
   console.log("test");
+  if(pageInitialized) return;
+    pageInitialized = true;
 });
   //function add message
 function addMessageDemo(data) {
