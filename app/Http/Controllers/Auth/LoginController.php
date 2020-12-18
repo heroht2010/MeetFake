@@ -58,21 +58,18 @@ class LoginController extends Controller
     {
 
         $getInfo = Socialite::driver('google')->user();
-
         $user = $this->createUser($getInfo,'google');
        
-           
-
         $arr =[
-            'provider_id'=>$user->getId(),
+            'provider_id'=>$getInfo->getId(),
         ];
         if(Auth::attempt($arr)){
-            session()->put('iduser',$user->getId());
-            session()->put('avartar',$user->getAvatar());
-            session()->put('name',$user->getName());
-            session()->put('email',$user->getEmail());
-            session()->put('avatar',$user->getAvatar());
-            session()->put('provider_id',$user->getId());  
+            session()->put('iduser',$getInfo->getId());
+            session()->put('avartar',$getInfo->getAvatar());
+            session()->put('name',$getInfo->getName());
+            session()->put('email',$getInfo->getEmail());
+            session()->put('avatar',$getInfo->getAvatar());
+            session()->put('provider_id',$getInfo->getId());  
         }
 
         
@@ -100,6 +97,5 @@ class LoginController extends Controller
             $user->provider_id = $getInfo->id;
             $user->save();
         }
-        return $user;
     }
 }
