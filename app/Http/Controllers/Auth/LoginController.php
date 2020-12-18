@@ -83,7 +83,7 @@ class LoginController extends Controller
         $user = User::where('provider_id', $getInfo->id)->first();
         
         if (!$user) {
-            $user = User::create([
+            $create = User::create([
                 'name'     => $getInfo->name,
                 'email'    => $getInfo->email,
                 'avatar'    => $getInfo->avatar,
@@ -92,13 +92,13 @@ class LoginController extends Controller
             ]);
         }
         if ($user) {
-            $user = User::update([
-                'name'     => $getInfo->name,
-                'email'    => $getInfo->email,
-                'avatar'    => $getInfo->avatar,
-                'provider' => 'google',
-                'provider_id' => $getInfo->id
-            ]);
+            
+            $user->name     = $getInfo->name;
+            $user->email    = $getInfo->email;
+            $user->avatar    = $getInfo->avatar;
+            $user->provider = 'google';
+            $user->provider_id = $getInfo->id;
+            $user->save();
         }
         return $user;
     }
