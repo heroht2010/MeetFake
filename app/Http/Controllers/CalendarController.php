@@ -31,8 +31,8 @@ class CalendarController extends Controller
         }
         
         if($i>0){
-            dd("ok");
             Alert::toast('Today you got '.$i.' meeting, check now!!! ')->autoClose(10000);
+            dd(Alert::toast('Today you got '.$i.' meeting, check now!!! ')->autoClose(10000));
         }
         
         return view('calendar.calendar');
