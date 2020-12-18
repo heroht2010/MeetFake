@@ -22,16 +22,18 @@ class CalendarController extends Controller
     }
     public function index( $provider_id){
         $now = Carbon::now('Asia/Ho_Chi_Minh');
-  //    dd($now->toDateString());
+      //   dd($now->toDateString());
         $notification = Events::where('provider_id',$provider_id)->where('start','LIKE', '%' . $now->toDateString() . '%')->get();
         $i=0;
-        
+       
         foreach($notification as $item){
             $i++;
         }
+        
         if($i>0){
             Alert::toast('Today you got '.$i.' meeting, check now!!! ')->autoClose(10000);
         }
+        
         return view('calendar.calendar');
     }
     public function listEvent($provider_id){
