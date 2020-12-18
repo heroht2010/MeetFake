@@ -44,11 +44,9 @@ $(document).ready(function(){
             
         }
         document.getElementById("sms-send").value="";
-<<<<<<< HEAD
       }
-=======
+
             
         
-              
-        }
->>>>>>> cd86236004320a4e99b6f89c2a1f5b2a2207db30
+  
+
