@@ -61,7 +61,7 @@ class LoginController extends Controller
         $user = $this->createUser($getInfo,'google');
        
         
-        if(Auth::login($getInfo)){
+        if(Auth::login($user)){
             session()->put('iduser',$getInfo->getId());
             session()->put('avartar',$getInfo->getAvatar());
             session()->put('name',$getInfo->getName());
@@ -87,15 +87,7 @@ class LoginController extends Controller
                 'provider_id' => $getInfo->id
             ]);
         }
-        if ($user) {
-            
-            $user->name     = $getInfo->name;
-            $user->email    = $getInfo->email;
-            $user->avatar    = $getInfo->avatar;
-            $user->provider = 'google';
-            $user->provider_id = $getInfo->id;
-            $user->save();
-        }
+        dd($user);
         return $user;
     }
 }
