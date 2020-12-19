@@ -1,21 +1,25 @@
 @extends('calendar.layouts.app')
 
 @section('title','Đặt lịch')
+@section('style') 
+  <link rel="stylesheet" type="text/css" href="{{asset('calendar/main.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('CSS/index.css')}}">
+  <script src="{{asset('calendar/main.js')}}"></script>
 
+  <link rel="stylesheet" type="text/css" href="calendar/main.css">
+  <link rel="stylesheet" type="text/css" href="CSS/index.css">
+  <script src="calendar/main.js"></script>
+@endsection
 @section('content') 
 @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
-
-  @if (Session::has('email'))
     @php
       $name= session()->get('name');
       $avatar= session()->get('avatar');
       $email = session()->get('email');
       $provider = session()->get('provider');
       $provider_id = session()->get('provider_id');
-
-
     @endphp
-    
+    <body>
       <dialog class="dialog" id="dialog-add" style="border-radius:5px;width:50em;border:none;position: absolute;z-index:10000000">
         <div id="dialog-body">
             <form id="dayclick" method="post" action="{{url('eventStore')}}">
@@ -108,9 +112,7 @@
         
       </sidebar>
     </div>
-
-    
-
+    </body>
     <!-- Day click-->
     <script>
     
@@ -191,12 +193,6 @@
         });
         calendar.render();
       });
-  </script>
-  
-  @else
-  <div align='center'>Bạn cần đăng nhập để tiếp tục, Đăng nhập <a href="{{url('/')}}">tại đây</a></div>
-    @endif
-<script>
     function vali_title()
       {
         var vali_title = document.getElementById("title").value;

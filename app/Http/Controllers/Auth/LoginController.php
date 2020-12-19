@@ -74,7 +74,7 @@ class LoginController extends Controller
     }
     function createUser($getInfo){
  
-        $user = User::where('provider_id', $getInfo->id)->first();
+        $user = User::where('provider_id', $getInfo->getId())->first();
         
         if (!$user) {
             $create = User::create([
@@ -82,7 +82,7 @@ class LoginController extends Controller
                 'email'    => $getInfo->email,
                 'avatar'    => $getInfo->avatar,
                 'provider' => 'google',
-                'provider_id' => $getInfo->id
+                'provider_id' => $getInfo->getId()
             ]);
         }
         return $user;

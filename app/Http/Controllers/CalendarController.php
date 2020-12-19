@@ -99,5 +99,13 @@ class CalendarController extends Controller
 
         };
         return redirect()->back();
-    }    
+    }   
+    
+    
+
+
+    //MyMeeting
+    public function getMymeeting(){
+        return view('calendar.mymeeting');
+    } 
 }

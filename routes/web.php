@@ -27,8 +27,8 @@ Route::get('/login/google', 'Auth\LoginController@redirectToProvider')->name('lo
 Route::get('/login/google/callback', 'Auth\LoginController@handleProviderCallback');
 
 //calendar
-Route::get('indexCalendar/{provider_id}','CalendarController@index')->middleware('CheckLogin');
-Route::get('listEvent/{provider_id}','CalendarController@listEvent')->middleware('CheckLogin');
+Route::get('indexCalendar/{provider_id}','CalendarController@index');//->middleware('CheckLogin');
+Route::get('listEvent/{provider_id}','CalendarController@listEvent');//->middleware('CheckLogin');
 Route::post('eventStore','CalendarController@store');
 Route::post('eventUpdate','CalendarController@update');
 Route::post('eventDelete','CalendarController@delete');
@@ -37,6 +37,8 @@ Route::get('/calendar',function(){
 
 	return view('welcome');
 })->middleware('CheckLogin');
+Route::get('mymeeting','CalendarController@getMymeeting');
+
 
 //Chat
 // Truyển message lên server Pusher
