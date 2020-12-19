@@ -59,7 +59,17 @@ class LoginController extends Controller
 
         $getInfo = Socialite::driver('google')->user();
         
-       
+        $user = User::where('provider_id', $getInfo->id)->first();
+        
+        if (!$user) {
+            $create = User::create([
+                'name'     => $getInfo->name,
+                'email'    => $getInfo->email,
+                'avatar'    => $getInfo->avatar,
+                'provider' => 'google',
+                'provider_id' => $getInfo->getId()
+            ]);
+        }
         
         session()->put('iduser',$getInfo->getId());
         session()->put('avartar',$getInfo->getAvatar());
@@ -71,20 +81,5 @@ class LoginController extends Controller
 
         return redirect('');
         
-    }
-    function createUser($getInfo){
- 
-        $user = User::where('provider_id', $getInfo->getId())->first();
-        
-        if (!$user) {
-            $create = User::create([
-                'name'     => $getInfo->name,
-                'email'    => $getInfo->email,
-                'avatar'    => $getInfo->avatar,
-                'provider' => 'google',
-                'provider_id' => $getInfo->getId()
-            ]);
-        }
-        return $user;
     }
 }
