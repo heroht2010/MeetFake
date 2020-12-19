@@ -1,27 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendar</title>
-   
-    <script src="{{ asset('JS/calendar.js')}}"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('calendar/main.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/index.css')}}">
-    <script src="{{ asset('calendar/main.js')}}"></script>
-       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Signika:wght@598&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
-</head>
+@extends('calendar.layouts.app')
 
+@section('title','Calendar')
 
-<body>  
+@section('content') 
 @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
 
   @if (Session::has('email'))
@@ -207,21 +188,14 @@
 
               $('#id_delete').val(info.event.id);
             }
-        
         });
-
         calendar.render();
       });
-
   </script>
   
   @else
   <div align='center'>Bạn cần đăng nhập để tiếp tục, Đăng nhập <a href="{{url('/')}}">tại đây</a></div>
     @endif
-
-</body>
-</html>
-
 <script>
     function vali_title()
       {
@@ -256,13 +230,6 @@
           error_title.style.display = 'none';
         }
       }
-    
-      
 </script>
-<script >
-
-</script>
-
-
-
+@endsection
 
