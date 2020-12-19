@@ -21,7 +21,7 @@
 <body>
 @include('sweetalert::alert')
 
-  @if (Session::has('email'))
+
 
     @php
       $name= session()->get('name');
