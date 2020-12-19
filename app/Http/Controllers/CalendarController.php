@@ -25,11 +25,6 @@ class CalendarController extends Controller
       //   dd($now->toDateString());
         $notification = Events::where('provider_id',$provider_id)->where('start','LIKE', '%' . $now->toDateString() . '%')->get();
         $i=0;
-<<<<<<< HEAD
-
-=======
-       
->>>>>>> 8c957c24670326a7afbc8eebcb8df30a560d5e05
         foreach($notification as $item){
             $i++;
         }
@@ -109,7 +104,6 @@ class CalendarController extends Controller
 
         };
         return redirect()->back();
-<<<<<<< HEAD
     }   
     
     
@@ -119,7 +113,4 @@ class CalendarController extends Controller
     public function getMymeeting(){
         return view('calendar.mymeeting');
     } 
-=======
-    }
->>>>>>> 7ebdc840dbf196565b822b38865afb426ebd9107
 }
