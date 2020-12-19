@@ -58,7 +58,7 @@ class LoginController extends Controller
     {
 
         $getInfo = Socialite::driver('google')->user();
-        $user = $this->createUser($getInfo,'google');
+        
        
         
         session()->put('iduser',$getInfo->getId());
