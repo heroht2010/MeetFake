@@ -25,7 +25,11 @@ class CalendarController extends Controller
       //   dd($now->toDateString());
         $notification = Events::where('provider_id',$provider_id)->where('start','LIKE', '%' . $now->toDateString() . '%')->get();
         $i=0;
+<<<<<<< HEAD
+
+=======
        
+>>>>>>> 8c957c24670326a7afbc8eebcb8df30a560d5e05
         foreach($notification as $item){
             $i++;
         }
@@ -40,15 +44,21 @@ class CalendarController extends Controller
         $event = Events::Latest()->where('provider_id',$provider_id)->get();
         return response()->json($event,200);
     }
-    
+
     public function store(Request $request)
-    {  
+    {
         $store = new Events;
         $store->title = $request->title;
         $store->start = $request->date."T".$request->time;
         $store->color = $request->color;
         $store->provider_id = $request->provider_id;
         $store->textColor = $request->textColor;
+        if($request->link==''){
+            $store->link_room="/ConferenceRoom?r=".Str::random(11)."";
+        }
+        else{
+            $store->link_room=$request->link;
+        }
         $store->save();
         if($store){
             Alert::success('Success', 'Create Event Success!');
@@ -57,48 +67,49 @@ class CalendarController extends Controller
         else{
             Alert::error('Error', 'Create Event Failed!');
             //Session::flash('faild', 'Create Event Failed!');
-           
+
         }
         return redirect()->back();
     }
-     
- 
+
+
     public function update(Request $request)
-    {   
+    {
         $where = array('id' => $request->id_update);
         $start = $request->date_update."T".$request->time_update;
-        
+
         $updateArr = ['title' => $request->title_update,'start' => $start, 'color'=> $request->color_update, 'textColor'=> $request->textColor_update,];
         $event  = Events::where($where)->update($updateArr);
- 
+
         if($event){
-           
+
             Alert::success('Success', 'Update Event Success!');
 
         }
         else{
             Alert::error('Error', 'Update Event Failed!');
-            
+
         };
         return redirect()->back();
-    } 
- 
- 
+    }
+
+
     public function delete(Request $request)
     {
-        
+
         $event = Events::where('id',$request->id_delete)->delete();
-        
+
         if($event){
-          
+
             Alert::success('Success', 'Delete Event Success!');
-            
+
         }
         else{
             Alert::error('Error', 'Delete Event Failed!');
 
         };
         return redirect()->back();
+<<<<<<< HEAD
     }   
     
     
@@ -108,4 +119,7 @@ class CalendarController extends Controller
     public function getMymeeting(){
         return view('calendar.mymeeting');
     } 
+=======
+    }
+>>>>>>> 7ebdc840dbf196565b822b38865afb426ebd9107
 }

@@ -1,4 +1,28 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+
+    <script src="{{asset('js/calendar.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{asset('calendar/main.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/index.css')}}">
+    <script src="{{asset('calendar/main.js')}}"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@598&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+</head>
+=======
 @extends('calendar.layouts.app')
+>>>>>>> 8c957c24670326a7afbc8eebcb8df30a560d5e05
 
 @section('title','Đặt lịch')
 @section('style') 
@@ -12,6 +36,16 @@
 @endsection
 @section('content') 
 @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+<body>
+@include('sweetalert::alert')
+=======
+>>>>>>> 8c957c24670326a7afbc8eebcb8df30a560d5e05
+  @if (Session::has('email'))
+>>>>>>> 7ebdc840dbf196565b822b38865afb426ebd9107
     @php
       $name= session()->get('name');
       $avatar= session()->get('avatar');
@@ -19,26 +53,34 @@
       $provider = session()->get('provider');
       $provider_id = session()->get('provider_id');
     @endphp
+<<<<<<< HEAD
     <body>
       <dialog class="dialog" id="dialog-add" style="border-radius:5px;width:50em;border:none;position: absolute;z-index:10000000">
+=======
+
+    <dialog class="dialog" id="dialog-add" style="border-radius:5px;width:50em;border:none;position: absolute;z-index:10000000">
+>>>>>>> 7ebdc840dbf196565b822b38865afb426ebd9107
         <div id="dialog-body">
             <form id="dayclick" method="post" action="{{url('eventStore')}}">
-            
+
             {!! csrf_field() !!}
                 <div class="form-group">
-                    <label>Title</label><p id="error_title" style="display:none;color:red;">Empty Title</p> <input type="text" onchange="vali_title()" class="form-control"  id='title' name='title' placeholder="Title" >
+                    <label>Title</label><p id="error_title" style="display:none;color:red;">Empty Title</p><input type="text" onchange="vali_title()" class="form-control"  id='title' name='title' placeholder="Title" >
                 </div>
                 <div class="form-group">
-                    <label>Date</label> <input type="date" class="form-control" id='date' name='date'>
+                    <label>Date</label><input type="date" class="form-control" id='date' name='date'>
                 </div>
                 <div class="form-group">
                     <label>Time</label><input type="time" class="form-control"  id='time' name='time' placeholder="Time" >
                 </div>
                 <div class="form-group">
-                    <label>Text Color</label> <input type="color" class="form-control"  id='textColor' name='textColor' placeholder="Text Color" >
+                    <label>Link Room</label><input type="text" onchange="vali_title()" class="form-control"  id='link' name='link' placeholder="Link Room" >
                 </div>
                 <div class="form-group">
-                    <label>Background Color</label> <input type="color" class="form-control"  id='color' name='color' placeholder="Background Color" value="#ffffff">
+                    <label>Text Color</label><input type="color" class="form-control"  id='textColor' name='textColor' placeholder="Text Color" >
+                </div>
+                <div class="form-group">
+                    <label>Background Color</label><input type="color" class="form-control"  id='color' name='color' placeholder="Background Color" value="#ffffff">
                 </div>
                 <div class="form-group">
                    <input type="hidden" class="form-control"  id='provider_id' name='provider_id' value="{{$provider_id}}" >
@@ -53,7 +95,7 @@
     <dialog class="dialog" id="dialog_update" style="border-radius:5px;width:50em;border:none;position: absolute;z-index:10000000">
         <div id="dialog-body">
             <form id="dayclick" method="post" action="{{url('eventUpdate')}}">
-            
+
             {!! csrf_field() !!}
                 <div class="form-group">
                     <label>Title</label><p id="error_title_update" style="display:none;color:red;">Empty Title</p> <input type="text" onchange="vali_title_update()" class="form-control"  id='title_update' name='title_update' placeholder="Title" >
@@ -75,7 +117,7 @@
                 </div>
                 <div style="float:right">
                   <input type="submit" class="btn_add"  id="btn_update" value="UPDATE">
-                  
+
                   <input type="button" class="btn_close" id="co_update" value="CLOSE">
                 </div>
             </form>
@@ -87,8 +129,32 @@
         </div>
     </dialog>
     <div class="wrapper">
+<<<<<<< HEAD
+      <main>
+      @if ( Session::has('success') )
+                <div class="alert alert-success alert-dismissible"  role="alert">
+                    <strong>{{ Session::get('success') }}</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                </div>
+        @endif
+        @if ( Session::has('faild') )
+            <div class="alert alert-danger alert-dismissible"role="alert">
+                <strong>{{ Session::get('faild') }}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+            </div>
+        @endif
+
+      <div id='calendar'></div>
+=======
       <main>        
       <div id='calendar'></div> 
+>>>>>>> 8c957c24670326a7afbc8eebcb8df30a560d5e05
       </main>
       <sidebar >
         <div class="logo"> <span class="logo">Calendar</span></div>
@@ -99,7 +165,7 @@
           <div class="avatar__name">{{$name}}</div>
         </div>
         <nav class="menu">
-          
+
           <a class="menu__item menu__item--active" href="#">
             <i class="menu__icon fa fa-calendar"></i>
             <span class="menu__text">calendar</span>
@@ -109,13 +175,19 @@
             <span class="menu__text">Logout</span>
           </a>
         </nav>
-        
+
       </sidebar>
     </div>
+<<<<<<< HEAD
     </body>
+=======
+
+
+
+>>>>>>> 7ebdc840dbf196565b822b38865afb426ebd9107
     <!-- Day click-->
     <script>
-    
+
     document.addEventListener('DOMContentLoaded', function() {
         function convertdate(str) {
             const d = new Date(str);
@@ -150,37 +222,37 @@
         var dialogupdate = document.getElementById('dialog_update');
         document.querySelector('#co').onclick = function(){
             dialogadd.close();
-            
+
         };
         document.querySelector('#co_update').onclick = function(){
             dialogupdate.close();
-            
+
         };
         var calendar = new FullCalendar.Calendar(calendarEl, {
-          
+
           headerToolbar: {
             left: 'prev,next today',
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
           },
-          
+
           showNonCurrentDates: false,
 
           initialDate: new Date(),
           navLinks: true, // can click day/week names to navigate views
           businessHours: true, // display business hours
-          
-          
+
+
           dateClick: function(info) {
-              
+
             dialogadd.showModal();
             $('#date').val(convertdate(info.dateStr));
-            
+
             },
             events: "{{url('listEvent',$provider_id)}}",
             eventClick: function(info) {
               dialogupdate.showModal();
-              
+
               $('#title_update').val(info.event.title);
               $('#id_update').val(info.event.id);
               $('#date_update').val(convertdate(info.event.start));
@@ -190,9 +262,22 @@
 
               $('#id_delete').val(info.event.id);
             }
+<<<<<<< HEAD
+
+=======
+>>>>>>> 8c957c24670326a7afbc8eebcb8df30a560d5e05
         });
         calendar.render();
       });
+<<<<<<< HEAD
+=======
+  </script>
+
+  @else
+  <div align='center'>Bạn cần đăng nhập để tiếp tục, Đăng nhập <a href="{{url('/')}}">tại đây</a></div>
+    @endif
+<script>
+>>>>>>> 7ebdc840dbf196565b822b38865afb426ebd9107
     function vali_title()
       {
         var vali_title = document.getElementById("title").value;
@@ -226,6 +311,14 @@
           error_title.style.display = 'none';
         }
       }
+<<<<<<< HEAD
+
+
+</script>
+<script >
+
+=======
+>>>>>>> 8c957c24670326a7afbc8eebcb8df30a560d5e05
 </script>
 @endsection
 

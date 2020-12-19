@@ -72,8 +72,8 @@
         <div class="camremote" id="remotevideo"></div>
     </div>
 
-    <input value="{{$idRoom}}" hidden id="idRoom">
-    <input value="{{session('iduser')}}" hidden id="idUser">
+    <input value="{{$idRoom}}.{{session('avartar')}}" hidden id="idRoom">
+    <input value="{{session('name')}}.{{session('iduser')}}" hidden id="idUser">
 
     {{-- Bottom Bar --}}
     <div class="bottomBar">
@@ -132,17 +132,6 @@
     <div class="modalStatusUser w3-animate-bottom" id="userStatusContainer" >
         <p id="userStatus">fasfaf</p>
     </div>
-
-    <script>
-        var connection=new RTCMultiConnection();
-
-                connection.extra = {
-        name: "<?php echo session('name');?>",
-        email: "<?php echo session('email');?>",
-        avartar: "<?php echo session('avartar');?>"
-        };
-
-    </script>
     <script src="{{asset('/js/getFuncRTCMulticonnection.js')}}"></script>
     <script src="{{asset('/js/offRoom.js')}}"></script>
 @endsection
