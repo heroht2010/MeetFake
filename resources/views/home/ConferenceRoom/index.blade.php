@@ -4,6 +4,9 @@
 
 @section('content')
     {{-- Header --}}
+    @php
+      $name= session()->get('name');
+    @endphp
     <header class="header-section">
         <div class="container-fluid">
             <div class="row">
@@ -45,9 +48,11 @@
 
                             </div>
                             <div class="message">
-
+                                    <input value="{{$name}}" hidden id="Username">
+                                    <input value="{{$idRoom}}" hidden id="idRoom-chat">
                                     <input type="text" id="sms-send" class="input-message" placeholder="Gửi tin nhắn cho mọi người">
-                                    <input type="button"  value="Gửi" onclick="chatForm()">
+                                    <i onclick="formChat()" class="fa fa-send" style="font-size:24px;color:black"></i>
+                                    
                             </div>
                         </div>
                         <script src="{{asset('/js/getTimeCurrent.js')}}"></script>

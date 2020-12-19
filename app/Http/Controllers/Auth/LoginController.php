@@ -7,7 +7,7 @@ use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Laravel\Socialite\Facades\Socialite;
-
+use Auth;
 class LoginController extends Controller
 {
     /*
@@ -56,16 +56,35 @@ class LoginController extends Controller
      */
     public function handleProviderCallback()
     {
-        $user = Socialite::driver('google')->user();
-        session()->put('iduser',$user->getId());
-        session()->put('avartar',$user->getAvatar());
-        session()->put('iduser',$user->getId()); 
-        session()->put('name',$user->getName());
-        session()->put('email',$user->getEmail());
-        session()->put('avatar',$user->getAvatar());
-        session()->put('provider_id',$user->getId());     
 
+        $getInfo = Socialite::driver('google')->user();
+        $user = $this->createUser($getInfo,'google');
+       
         
+        session()->put('iduser',$getInfo->getId());
+        session()->put('avartar',$getInfo->getAvatar());
+        session()->put('name',$getInfo->getName());
+        session()->put('email',$getInfo->getEmail());
+        session()->put('avatar',$getInfo->getAvatar());
+        session()->put('provider_id',$getInfo->getId());
+
+
         return redirect('');
+        
+    }
+    function createUser($getInfo){
+ 
+        $user = User::where('provider_id', $getInfo->id)->first();
+        
+        if (!$user) {
+            $create = User::create([
+                'name'     => $getInfo->name,
+                'email'    => $getInfo->email,
+                'avatar'    => $getInfo->avatar,
+                'provider' => 'google',
+                'provider_id' => $getInfo->id
+            ]);
+        }
+        return $user;
     }
 }

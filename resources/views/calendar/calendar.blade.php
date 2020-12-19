@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +20,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
 </head>
+=======
+@extends('calendar.layouts.app')
+>>>>>>> 8c957c24670326a7afbc8eebcb8df30a560d5e05
 
+@section('title','Đặt lịch')
 
+@section('content') 
+@include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
+
+<<<<<<< HEAD
 <body>
 @include('sweetalert::alert')
+=======
+>>>>>>> 8c957c24670326a7afbc8eebcb8df30a560d5e05
   @if (Session::has('email'))
     @php
       $name= session()->get('name');
@@ -102,6 +113,7 @@
         </div>
     </dialog>
     <div class="wrapper">
+<<<<<<< HEAD
       <main>
       @if ( Session::has('success') )
                 <div class="alert alert-success alert-dismissible"  role="alert">
@@ -123,6 +135,10 @@
         @endif
 
       <div id='calendar'></div>
+=======
+      <main>        
+      <div id='calendar'></div> 
+>>>>>>> 8c957c24670326a7afbc8eebcb8df30a560d5e05
       </main>
       <sidebar >
         <div class="logo"> <span class="logo">Calendar</span></div>
@@ -226,21 +242,18 @@
 
               $('#id_delete').val(info.event.id);
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8c957c24670326a7afbc8eebcb8df30a560d5e05
         });
-
         calendar.render();
       });
-
   </script>
 
   @else
   <div align='center'>Bạn cần đăng nhập để tiếp tục, Đăng nhập <a href="{{url('/')}}">tại đây</a></div>
     @endif
-
-</body>
-</html>
-
 <script>
     function vali_title()
       {
@@ -275,13 +288,14 @@
           error_title.style.display = 'none';
         }
       }
+<<<<<<< HEAD
 
 
 </script>
 <script >
 
+=======
+>>>>>>> 8c957c24670326a7afbc8eebcb8df30a560d5e05
 </script>
-
-
-
+@endsection
 
