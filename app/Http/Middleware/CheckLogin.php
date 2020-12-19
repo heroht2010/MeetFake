@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Auth;
+use Session;
 
 class CheckLogin
 {
@@ -16,7 +16,7 @@ class CheckLogin
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::guest()){
+        if(!session()->has('provider_id')){
             return redirect()->intended('/');
         }
         return $next($request);

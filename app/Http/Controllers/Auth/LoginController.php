@@ -61,14 +61,13 @@ class LoginController extends Controller
         $user = $this->createUser($getInfo,'google');
        
         
-        //if(Auth::attempt($user)){
-            session()->put('iduser',$getInfo->getId());
-            session()->put('avartar',$getInfo->getAvatar());
-            session()->put('name',$getInfo->getName());
-            session()->put('email',$getInfo->getEmail());
-            session()->put('avatar',$getInfo->getAvatar());
-            session()->put('provider_id',$getInfo->getId());
-        //}
+        session()->put('iduser',$getInfo->getId());
+        session()->put('avartar',$getInfo->getAvatar());
+        session()->put('name',$getInfo->getName());
+        session()->put('email',$getInfo->getEmail());
+        session()->put('avatar',$getInfo->getAvatar());
+        session()->put('provider_id',$getInfo->getId());
+
 
         return redirect('');
         

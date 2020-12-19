@@ -1,6 +1,6 @@
 @extends('calendar.layouts.app')
 
-@section('title','Calendar')
+@section('title','Đặt lịch')
 
 @section('content') 
 @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
