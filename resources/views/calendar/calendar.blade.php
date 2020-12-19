@@ -3,21 +3,9 @@
 
 
 @section('title','Đặt lịch')
-@section('style') 
-  <link rel="stylesheet" type="text/css" href="{{asset('calendar/main.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('CSS/index.css')}}">
-  <script src="{{asset('calendar/main.js')}}"></script>
 
-  <link rel="stylesheet" type="text/css" href="calendar/main.css">
-  <link rel="stylesheet" type="text/css" href="CSS/index.css">
-  <script src="calendar/main.js"></script>
-@endsection
 @section('content') 
 @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
-
-
-
-
 <body>
 @include('sweetalert::alert')
 
@@ -30,10 +18,6 @@
       $provider = session()->get('provider');
       $provider_id = session()->get('provider_id');
     @endphp
-
-    <body>
-
-
     <dialog class="dialog" id="dialog-add" style="border-radius:5px;width:50em;border:none;position: absolute;z-index:10000000">
         <div id="dialog-body">
             <form id="dayclick" method="post" action="{{url('eventStore')}}">
@@ -130,7 +114,7 @@
       </sidebar>
     </div>
 
-    </body>
+</body>
 
     <!-- Day click-->
     <script>

@@ -8,7 +8,13 @@
     <title>@yield('title')</title>
     <link rel="icon" type="image/png" href="../image/LOGO.png" />
     <!-- Google Font -->
-    @yield('style')
+    <link rel="stylesheet" type="text/css" href="{{asset('calendar/main.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('CSS/index.css')}}">
+  <script src="{{asset('calendar/main.js')}}"></script>
+
+  <link rel="stylesheet" type="text/css" href="calendar/main.css">
+  <link rel="stylesheet" type="text/css" href="CSS/index.css">
+  <script src="calendar/main.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
