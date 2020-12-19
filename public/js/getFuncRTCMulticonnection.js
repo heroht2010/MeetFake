@@ -1,4 +1,6 @@
 
+
+var connection=new RTCMultiConnection();
         connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
         connection.session={
             audio:true,
@@ -8,7 +10,11 @@
             OfferToReceiveAudio: true,
             OfferToReceiveVideo: true
         };
+        connection.maxParticipantsAllowed=12;
 
+        connection.userid = $("#idUser").val();
+        connection.sessionid = cutName($("#idRoom").val());
+        console.log(cutAvatar(connection.sessionid));
         connection.onstream = function(event) {
 
         var video = event.mediaElement;
@@ -17,7 +23,6 @@
                 video.style.width="100%";
                 video.style.height="550px";
                 $("#localvideo").append(video);
-
             }
 
             if(event.type==='remote'){
@@ -25,6 +30,8 @@
                 video.style.width="50%";
                 video.style.height="200px";
                 $("#remotevideo").append(video);
+
+
             }
 
 
@@ -85,20 +92,17 @@ var btnCountVideo=0;
                     $("#iconVideo").replaceWith(iconBtn);
               }
 });
-
         };
         $("#userCount").text(connection.getAllParticipants().length+1);
 
-
-        connection.userid = $("#idUser").val();
         window.onload = function() {
-            connection.openOrJoin($("#idRoom").val() || 'predefiend-roomid');
-
+            connection.openOrJoin(connection.sessionid || 'predefiend-roomid');
         };
+
         connection.onUserStatusChanged=function(event,dontWriteLogs){
             !dontWriteLogs
             &&
-            $("#userStatus").text(connection.extra.name+" "+event.status);
+            $("#userStatus").text(cutName(event.userid)+" "+event.status);
             document.getElementById("userStatusContainer").style.visibility = "visible";
             setTimeout(function(){
                 document.getElementById("userStatusContainer").style.visibility = "hidden";
@@ -106,14 +110,13 @@ var btnCountVideo=0;
 
              $("#userCount").text(connection.getAllParticipants().length+1);
 
-    connection.getAllParticipants().forEach(function(participantId) {
-    var user = connection.peers[participantId];
-    var userinRoom="<div class='userInRoom'>";
-          userinRoom+="<img src='"+user.extra.avartar+"' id='avartaruserInRoom'>";
-          userinRoom+="<p id='nameuserInRoom'>"+user.extra.name+"</p>";
-          userinRoom+="</div>";
-           $("#listUser").append(userinRoom);
-
-});
         };
 
+function cutName(string){
+    string=string.slice(0,string.indexOf('.'));
+    return string;
+}
+function cutAvatar(string){
+    string=string.slice(string.indexOf('.')+1,string.length);
+    return string;
+}
