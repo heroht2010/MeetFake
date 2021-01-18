@@ -48,4 +48,9 @@ function formChat()
 }       
         
   
+$('#sms-send').keypress(function(event) {
+  if (event.keyCode == 13 || event.which == 13) {
+         formChat();      
+     }
+ });
 

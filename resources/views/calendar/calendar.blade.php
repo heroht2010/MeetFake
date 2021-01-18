@@ -8,9 +8,6 @@
 @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
 <body>
 @include('sweetalert::alert')
-
-
-
     @php
       $name= session()->get('name');
       $avatar= session()->get('avatar');
