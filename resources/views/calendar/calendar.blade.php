@@ -57,7 +57,8 @@
                     <label>Title</label><p id="error_title_update" style="display:none;color:red;">Empty Title</p> <input type="text" onchange="vali_title_update()" class="form-control"  id='title_update' name='title_update' placeholder="Title" >
                 </div>
                 <div class="form-group">
-                    <label>Date</label> <input type="date" class="form-control" id='date_update' name='date_update'>
+                    <label>Date</label> 
+                    <input type="date" class="form-control" id='date_update' name='date_update'>
                 </div>
                 <div class="form-group">
                     <label>Time</label><input type="time" class="form-control"  id='time_update' name='time_update' placeholder="Time" >
@@ -66,14 +67,14 @@
                     <label>Text Color</label> <input type="color" class="form-control"  id='textColor_update' name='textColor_update' placeholder="Text Color" >
                 </div>
                 <div class="form-group">
-                    <label>Background Color</label> <input type="color" class="form-control"  id='color_update' name='color_update' placeholder="Background Color" value="#ffffff">
+                    <label>Background Color</label> <input type="color" class="form-control"  id='color_update' name='color_update' placeholder="Background Color" >
                 </div>
                 <div class="form-group">
                    <input type="hidden" class="form-control"  id='id_update' name='id_update' >
                 </div>
                 <div style="float:right">
                   <input type="submit" class="btn_add"  id="btn_update" value="UPDATE">
-
+                  <a href=""></a>
                   <input type="button" class="btn_close" id="co_update" value="CLOSE">
                 </div>
             </form>
