@@ -120,3 +120,4 @@ function cutAvatar(string){
     string=string.slice(string.indexOf('.')+1,string.length);
     return string;
 }
+
