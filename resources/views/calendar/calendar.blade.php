@@ -193,7 +193,7 @@
               $('#time_update').val(converttime(info.event.start));
               $('#linkroom_update').val(info.event.extendedProps.link_room);
               $('#textColor_update').val(info.event.textColor);
-              $('#color_update').val(info.event.ui.backgroundColor);
+              $('#color_update').val(info.event.backgroundColor);
               $('#id_delete').val(info.event.id);
             }
         });
