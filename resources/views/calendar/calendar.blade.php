@@ -188,12 +188,12 @@
               dialogupdate.showModal();
               $('#title_update').val(info.event.title);
               $('#id_update').val(info.event.id);
-              console.log(info.event.ui.color);
+              console.log(info.event.ui.backgroundColor);
               $('#date_update').val(convertdate(info.event.start));
               $('#time_update').val(converttime(info.event.start));
               $('#linkroom_update').val(info.event.extendedProps.link_room);
               $('#textColor_update').val(info.event.textColor);
-              $('#color_update').val(info.event.ui.color);
+              $('#color_update').val(info.event.ui.backgroundColor);
               $('#id_delete').val(info.event.id);
             }
         });
