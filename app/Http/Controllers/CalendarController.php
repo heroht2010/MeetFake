@@ -22,8 +22,6 @@ class CalendarController extends Controller
         return redirect()->to('/');
     }
     public function index( $provider_id){
-        $event = Events::Latest()->where('provider_id',$provider_id)->get();
-        dd($event);
         $now = Carbon::now('Asia/Ho_Chi_Minh');
       //   dd($now->toDateString());
         $notification = Events::where('provider_id',$provider_id)->where('start','LIKE', '%' . $now->toDateString() . '%')->get();
