@@ -188,10 +188,10 @@
               dialogupdate.showModal();
               $('#title_update').val(info.event.title);
               $('#id_update').val(info.event.id);
-              console.log(info.event.extendedProps);
+              console.log(info.event);
               $('#date_update').val(convertdate(info.event.start));
               $('#time_update').val(converttime(info.event.start));
-              $('#linkroom_update').val(info.event.link_room);
+              $('#linkroom_update').val(info.event.extendedProps.link_room);
               $('#textColor_update').val(info.event.textColor);
               $('#color_update').val(info.event.color);
               $('#id_delete').val(info.event.id);
