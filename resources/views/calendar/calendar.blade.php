@@ -87,7 +87,7 @@
                   <input type="hidden" class="form-control"  id='id_delete' name='id_delete' >
                   <input type="submit" class="btn_delete" style="float:right;margin-right: 6px" id="btn_delete" value="DELETE">
                 </form>
-                <input type="button" class="btn_join" onclick="JoinRoom();" style="float:right;margin-right: 6px" id="btn_delete" value="DELETE">
+                <input type="button" class="btn_joinRoom" onclick="JoinRoom();" style="float:right;margin-right: 6px" id="btn_joinRoom" value="JOIN ROOM">
         </div>
     </dialog>
     <div class="wrapper">
