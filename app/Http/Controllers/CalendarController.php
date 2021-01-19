@@ -37,7 +37,7 @@ class CalendarController extends Controller
     }
     public function listEvent($provider_id){
         $event = Events::Latest()->where('provider_id',$provider_id)->get();
-        return response()->json($event,200);
+        return response()->json($event,200);    
     }
 
     public function store(Request $request)
