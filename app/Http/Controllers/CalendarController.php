@@ -32,8 +32,7 @@ class CalendarController extends Controller
         
         if($i>0){
             Alert::toast('Today you got '.$i.' meeting, check now!!! ')->autoClose(10000);
-        }
-        
+        }  
         return view('calendar.calendar');
     }
     public function listEvent($provider_id){
@@ -50,7 +49,7 @@ class CalendarController extends Controller
         $store->provider_id = $request->provider_id;
         $store->textColor = $request->textColor;
         if($request->link==''){
-            $store->link_room="/ConferenceRoom?r=".Str::random(11)."";
+            $store->link_room=Str::random(11)."";
         }
         else{
             $store->link_room=$request->link;
@@ -58,12 +57,9 @@ class CalendarController extends Controller
         $store->save();
         if($store){
             Alert::success('Success', 'Create Event Success!');
-
         }
         else{
             Alert::error('Error', 'Create Event Failed!');
-            //Session::flash('faild', 'Create Event Failed!');
-
         }
         return redirect()->back();
     }

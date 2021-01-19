@@ -64,6 +64,9 @@
                     <label>Time</label><input type="time" class="form-control"  id='time_update' name='time_update' placeholder="Time" >
                 </div>
                 <div class="form-group">
+                    <label>Link Room</label><input type="text" class="form-control"  id='linkroom_update' name='linkroom_update' placeholder="Link Room" >
+                </div>
+                <div class="form-group">
                     <label>Text Color</label> <input type="color" class="form-control"  id='textColor_update' name='textColor_update' placeholder="Text Color" >
                 </div>
                 <div class="form-group">
@@ -78,11 +81,13 @@
                   <input type="button" class="btn_close" id="co_update" value="CLOSE">
                 </div>
             </form>
+                
                 <form method="post" action="{{url('eventDelete')}}">
                 {!! csrf_field() !!}
                   <input type="hidden" class="form-control"  id='id_delete' name='id_delete' >
                   <input type="submit" class="btn_delete" style="float:right;margin-right: 6px" id="btn_delete" value="DELETE">
                 </form>
+                <input type="button" class="btn_join" onclick="JoinRoom();" style="float:right;margin-right: 6px" id="btn_delete" value="DELETE">
         </div>
     </dialog>
     <div class="wrapper">
@@ -181,14 +186,13 @@
             events: "{{url('listEvent',$provider_id)}}",
             eventClick: function(info) {
               dialogupdate.showModal();
-
               $('#title_update').val(info.event.title);
               $('#id_update').val(info.event.id);
               $('#date_update').val(convertdate(info.event.start));
               $('#time_update').val(converttime(info.event.start));
+              $('#linkroom_update').val(info.event.link_room);
               $('#textColor_update').val(info.event.textColor);
               $('#color_update').val(info.event.color);
-
               $('#id_delete').val(info.event.id);
             }
         });
@@ -210,7 +214,7 @@
           error_title.style.display = 'none';
         }
       }
-      function vali_title_update()
+    function vali_title_update()
       {
         var vali_title = document.getElementById("title_update").value;
         var error_title = document.getElementById("error_title_update");
@@ -226,6 +230,10 @@
         else{
           error_title.style.display = 'none';
         }
+      }
+      function JoinRoom() {
+        var linkroom = document.getElementById("linkroom_update").value;
+        window.location="https://vkumeet.herokuapp.com/ConferenceRoom?r="+linkroom;
       }
 </script>
 
