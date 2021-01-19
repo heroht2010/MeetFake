@@ -103,15 +103,7 @@
     font-family: 'Roboto', sans-serif;
     color:  white;
   }
-  .btn_joinRoom{
-    border: none;
-    background-color: #0984e3;
-    height: 3em;
-    width: 7em;
-    border-radius: 5px;
-    font-family: 'Roboto', sans-serif;
-    color:  white;
-  }
+ 
   .dialog{
     border: none;
     position: absolute;

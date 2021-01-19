@@ -87,7 +87,7 @@
                   <input type="hidden" class="form-control"  id='id_delete' name='id_delete' >
                   <input type="submit" class="btn_delete" style="float:right;margin-right: 6px" id="btn_delete" value="DELETE">
                 </form>
-                <input type="button" class="btn_joinRoom" onclick="JoinRoom();" style="float:right;margin-right: 6px" id="btn_joinRoom" value="JOIN ROOM">
+                <input type="button" class="btn_delete" onclick="JoinRoom();" style="background-color: #EA2027;float:right;margin-right: 6px" id="btn_joinRoom" value="JOIN">
         </div>
     </dialog>
     <div class="wrapper">
@@ -193,7 +193,7 @@
               $('#time_update').val(converttime(info.event.start));
               $('#linkroom_update').val(info.event.extendedProps.link_room);
               $('#textColor_update').val(info.event.textColor);
-              $('#color_update').val(info.event.color);
+              $('#color_update').val(info.event.ui.backgroundColor);
               $('#id_delete').val(info.event.id);
             }
         });
