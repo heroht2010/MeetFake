@@ -22,6 +22,8 @@ class CalendarController extends Controller
         return redirect()->to('/');
     }
     public function index( $provider_id){
+        $event = Events::Latest()->where('provider_id',$provider_id)->get();
+        dd($event);
         $now = Carbon::now('Asia/Ho_Chi_Minh');
       //   dd($now->toDateString());
         $notification = Events::where('provider_id',$provider_id)->where('start','LIKE', '%' . $now->toDateString() . '%')->get();
@@ -70,7 +72,7 @@ class CalendarController extends Controller
         $where = array('id' => $request->id_update);
         $start = $request->date_update."T".$request->time_update;
 
-        $updateArr = ['title' => $request->title_update,'start' => $start, 'color'=> $request->color_update, 'textColor'=> $request->textColor_update,];
+        $updateArr = ['title' => $request->title_update,'start' => $start, 'color'=> $request->color_update, 'textColor'=> $request->textColor_update,'link_room'=> $request->linkroom_update];
         $event  = Events::where($where)->update($updateArr);
 
         if($event){
