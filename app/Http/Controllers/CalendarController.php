@@ -63,7 +63,8 @@ class CalendarController extends Controller
                 'title'=>"Tạo cuộc họp thành công",
                 'body'=>"Bạn đã tạo thành công cuộc họp, Nội dung: ".$request->title.", Diễn ra lúc: ".$request->time.", Ngày: ".$request->date
             ];
-            Mail::to('lvtan.18it1@vku.udn.vn')->send(new SendMail($details));
+            $mailto = Session::get('email');
+            Mail::to($mailto)->send(new SendMail($details));
             Alert::success('Success', 'Create Event Success!');
         }
         else{
