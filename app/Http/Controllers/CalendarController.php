@@ -47,7 +47,7 @@ class CalendarController extends Controller
     {
         $store = new Events;
         $time = '';
-        if($request->time!=''){
+        if($request->time==''){
             $time= '00:00:00';
         }
         else{
