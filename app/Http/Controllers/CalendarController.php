@@ -46,8 +46,15 @@ class CalendarController extends Controller
     public function store(Request $request)
     {
         $store = new Events;
+        $time = '';
+        if($request->time!=''){
+            $time= '00:00:00';
+        }
+        else{
+            $time=$request->time;
+        }
         $store->title = $request->title;
-        $store->start = $request->date."T".$request->time;
+        $store->start = $request->date."T".$time;
         $store->color = $request->color;
         $store->provider_id = $request->provider_id;
         $store->textColor = $request->textColor;
@@ -61,7 +68,7 @@ class CalendarController extends Controller
         if($store){
             $details = [
                 'title'=>"Tạo cuộc họp thành công",
-                'body'=>"Bạn đã tạo thành công cuộc họp, Nội dung: ".$request->title.", Diễn ra lúc: ".$request->time.", Ngày: ".$request->date
+                'body'=>"Bạn đã tạo thành công cuộc họp, Nội dung: ".$request->title.", Diễn ra lúc: ".$time.", Ngày: ".$request->date
             ];
             $mailto = Session::get('email');
             Mail::to($mailto)->send(new SendMail($details));
