@@ -8,6 +8,9 @@
 <body>
     <h2>{{$details['title']}}</h1>
     <h2>{{$details['body']}}</h2>
-    <h2>Xin Cảm Ơn!!!</br> Đây là Mail tự động, vui lòng không trả lời.</h2>
+    <h2>{{$details['title_calendar']}}</h2>
+    <h2>{{$details['time']}}</h2>
+    <h2>Xin Cảm Ơn!!!</h2>
+    <h2>Đây là Mail tự động, vui lòng không trả lời.</h2>
 </body>
 </html>
