@@ -8,6 +8,9 @@ use Redirect,Response,Session;
 use App\Eloquent;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMail;
+
 class CalendarController extends Controller
 {
     public function logout(){
@@ -56,6 +59,11 @@ class CalendarController extends Controller
         }
         $store->save();
         if($store){
+            $details = [
+                'title'=>"Tạo cuộc họp thành công",
+                'body'=>"Bạn đã tạo thành công cuộc họp, Nội dung: ".$request->title.", Diễn ra lúc: ".$request->time.", Ngày: ".$request->date
+            ];
+            Mail::to('lvtan.18it1@vku.udn.vn')->send(new SendMail($details));
             Alert::success('Success', 'Create Event Success!');
         }
         else{
@@ -74,7 +82,7 @@ class CalendarController extends Controller
         $event  = Events::where($where)->update($updateArr);
 
         if($event){
-
+            
             Alert::success('Success', 'Update Event Success!');
 
         }
