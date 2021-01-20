@@ -68,7 +68,7 @@ class CalendarController extends Controller
         if($store){
             $details = [
                 'title'=>"Tạo cuộc họp thành công",
-                'body'=>"Bạn đã tạo thành công cuộc họp, Nội dung: ".$request->title.", Diễn ra lúc: ".$time.", Ngày: ".$request->date
+                'body'=>"Bạn đã tạo thành công cuộc họp</br> Nội dung: ".$request->title.". </br> Diễn ra lúc: ".$time.", Ngày: ".$request->date
             ];
             $mailto = Session::get('email');
             Mail::to($mailto)->send(new SendMail($details));

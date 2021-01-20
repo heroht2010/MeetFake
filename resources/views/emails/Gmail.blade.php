@@ -6,8 +6,8 @@
     <title>VKU Meet</title>
 </head>
 <body>
-    <h1>{{$details['title']}}</h1>
+    <h2>{{$details['title']}}</h1>
     <h2>{{$details['body']}}</h2>
-    <h2>Cảm ơn</h2>
+    <h2>Xin Cảm Ơn!!!</br> Đây là Mail tự động, vui lòng không trả lời.</h2>
 </body>
 </html>
