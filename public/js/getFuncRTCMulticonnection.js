@@ -10,6 +10,15 @@ var connection=new RTCMultiConnection();
             OfferToReceiveAudio: true,
             OfferToReceiveVideo: true
         };
+
+        connection.iceServers = [];
+
+        connection.iceServers.push({
+            urls: 'stun:ss-turn2.xirsys.com',
+            credential: '0ad512c0-5b8c-11eb-b7e2-0242ac140004',
+            username: 'hsB04HffhbpA6XDHKOagEYBVFvqFBcg1L6yYo37xu7_rU49DAk4bVYaiG4h-29YtAAAAAGAI35RoZXJvaHQyMDEw'
+        });
+
         connection.maxParticipantsAllowed=12;
 
         connection.userid = $("#idUser").val();
