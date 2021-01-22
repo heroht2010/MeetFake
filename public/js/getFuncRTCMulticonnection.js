@@ -10,7 +10,12 @@ var connection=new RTCMultiConnection();
             OfferToReceiveAudio: true,
             OfferToReceiveVideo: true
         };
-
+        var displayMediaOptions = {
+            video: {
+              cursor: "always"
+            },
+            audio: false
+          };
         connection.iceServers = [];
 
         connection.iceServers.push({
@@ -120,7 +125,9 @@ var btnCountVideo=0;
              $("#userCount").text(connection.getAllParticipants().length+1);
 
         };
-
+        $("#btnShare").on('click',function(){
+            startCapture(event.mediaElement);
+        });
 function cutName(string){
     string=string.slice(0,string.indexOf('.'));
     return string;
@@ -130,3 +137,14 @@ function cutAvatar(string){
     return string;
 }
 
+async function startCapture(videocap) {
+
+    try {
+      videocap.srcObject = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+
+      connection.dontAttachStream = false;
+      connection.renegotiate();
+    } catch(err) {
+      console.error("Error: " + err);
+    }
+  }
