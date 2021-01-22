@@ -106,12 +106,11 @@ var btnCountVideo=0;
                     $("#iconVideo").replaceWith(iconBtn);
               }
 });
-$("#btnShare").on('click',function(){
-    connection.session = {
-        audio: true,
-        screen: true
-    };
-});
+
+        $("#btnShare").on('click',function(){
+           event.mediaElement.srcObject = navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+        });
+
         };
         $("#userCount").text(connection.getAllParticipants().length+1);
 
