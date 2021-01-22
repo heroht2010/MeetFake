@@ -106,6 +106,9 @@ var btnCountVideo=0;
                     $("#iconVideo").replaceWith(iconBtn);
               }
 });
+$("#btnShare").on('click',function(){
+  startCapture(event.mediaElement);
+});
         };
         $("#userCount").text(connection.getAllParticipants().length+1);
 
@@ -125,9 +128,7 @@ var btnCountVideo=0;
              $("#userCount").text(connection.getAllParticipants().length+1);
 
         };
-        $("#btnShare").on('click',function(){
-            startCapture(event.mediaElement);
-        });
+
 function cutName(string){
     string=string.slice(0,string.indexOf('.'));
     return string;
