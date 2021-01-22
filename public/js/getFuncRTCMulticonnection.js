@@ -107,7 +107,10 @@ var btnCountVideo=0;
               }
 });
 $("#btnShare").on('click',function(){
-  startCapture(event.mediaElement);
+    connection.session = {
+        audio: true,
+        screen: true
+    };
 });
         };
         $("#userCount").text(connection.getAllParticipants().length+1);
