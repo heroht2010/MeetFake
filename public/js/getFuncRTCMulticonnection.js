@@ -108,7 +108,14 @@ var btnCountVideo=0;
 });
 
         $("#btnShare").on('click',function(){
-           video.srcObject = navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+            try {
+                video.srcObject = navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+                connection.dontAttachStream = false;
+                connection.renegotiate();
+              } catch(err) {
+                console.error("Error: " + err);
+              }
+
         });
 
         };
