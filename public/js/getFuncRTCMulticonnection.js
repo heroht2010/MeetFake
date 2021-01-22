@@ -35,7 +35,7 @@ var connection=new RTCMultiConnection();
             if(event.type=='local'){
                 video.controls=false;
                 video.style.width="100%";
-                video.style.height="550px";
+                video.style.height="580px";
                 $("#localvideo").append(video);
             }
 
@@ -151,3 +151,4 @@ async function startCapture(videocap) {
       console.error("Error: " + err);
     }
   }
+

@@ -135,6 +135,20 @@
         <p id="userStatus">fasfaf</p>
     </div>
 
+    <script>
+        $(document).ready(function(){
+            $(document).mousemove(function(event){
+                if(event.pageY>550){
+                    document.getElementById("bottomBar").style.visibility = "visible";
+                }
+            });
+            document.onclick = function() {
+                if(event.pageY<500){
+                    document.getElementById("bottomBar").style.visibility = "hidden";
+                }
+            };
+        });
+    </script>
     <script src="{{asset('/js/getFuncRTCMulticonnection.js')}}"></script>
     <script src="{{asset('/js/offRoom.js')}}"></script>
 @endsection
