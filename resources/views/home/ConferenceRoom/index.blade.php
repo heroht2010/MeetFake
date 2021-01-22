@@ -73,7 +73,7 @@
     <input value="{{session('name')}}.{{session('iduser')}}" hidden id="idUser">
 
     {{-- Bottom Bar --}}
-    <div class="bottomBar">
+    <div class="bottomBar" id="bottomBar" style="visibility: hidden">
         <div class="detailRoom">
             <div class="dropup">
                 <button onclick="dropUp()" class="dropbtn">Chi tiết về phòng họp
